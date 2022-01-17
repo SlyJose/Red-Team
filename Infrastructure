@@ -7,9 +7,9 @@ Redirector DNS:
 
 -- ACCESS --
 
-user: sly
-pass: key jose-beaconeng
-port: 288
+user: -
+pass: -
+port: -
 
 All boxes:
 
