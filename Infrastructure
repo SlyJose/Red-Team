@@ -1,0 +1,77 @@
+
+Infrastructure Details
+
+Team Server:
+Redirector HTTP:
+Redirector DNS:
+
+-- ACCESS --
+
+user: sly
+pass: key jose-beaconeng
+port: 288
+
+All boxes:
+
+SSH config: https://mediatemple.net/community/products/dv/204643810/how-do-i-disable-ssh-login-for-the-root-user
+- No root access
+- Use ssh key no password
+- Change default port
+- Close unnecesary ports
+
+Redir build:
+
+- Nginx for the service, not apache
+- Nginx install and setup: https://jgefroh.medium.com/a-guide-to-using-nginx-for-static-websites-d96a9d034940
+- Nginx file nginx.conf is not touched, left by default, no need to change anything
+- In case the nginx redirection rules don't work, try creating a file named redirector.conf in 
+/etc/nginx with th contents:
+
+server {
+	location ~ ^/w/index.php(.*)$ {
+        	proxy_pass https://137.184.96.18/w/index.php$1$is_args$args;
+	}
+
+	location ~ ^/wiki(.*)$ {
+	        proxy_pass https://137.184.96.18/wiki$1$is_args$args;
+	}
+
+	location ~ ^/(....)$ {
+	        proxy_pass https://137.184.96.18/$1;
+	}
+}
+
+In the sites-available file that you created inside that folder, the rules are inside the server{} also. 
+
+***
+
+Team Server
+
+- Don't use default port 50050 for cobalt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
