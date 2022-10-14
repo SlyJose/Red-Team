@@ -1,0 +1,22 @@
+
+Cobalt Strike Toolkit
+
+
+Mayor changes for Powershell, Binary generation, Memory obfuscation, Mimikatz, is required the arsenalkit (license included)
+
+
+OPSEC tooling:
+
+- Restrict the usage of certain commands in Cobalt Strike to avoid detection: https://github.com/bluscreenofjeff/AggressorScripts/tree/master/OPSEC%20Profiles
+
+- 
+
+
+
+
+
+
+
+
+
+
